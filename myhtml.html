@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(255, 255, 255, 0.863);
+            position: relative;
+        }
+
+        .btn {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: sans-serif;
+            transform: translate(-50%, 50%);
+            background-color: rgb(255, 114, 114);
+            border: none;
+            border-radius: 5px;
+            padding: 1.5rem 3rem;
+            color: white;
+        }
+
+        .show {
+
+            display: none;
+        }
+
+        .hidden {
+            width: 400px;
+            height: 400px;
+            background-color: violet;
+            position: relative;
+            top: 12rem;
+            left: 30rem;
+            box-shadow: 0 8px 24px rgba(43, 43, 43, 0.514);
+        }
+
+        .para {
+            color: white;
+            padding: 3rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cross {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            padding: 6px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">show1</button>
+
+    <div class="hidden show">
+        <button class="cross">&times;</button>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nostrum. Non aut officiis ipsum
+            assumenda quidem quod veritatis? Quisquam vitae itaque necessitatibus, nobis labore praesentium, temporibus
+            expedita impedit magnam sint sit quis facere, minima possimus officia aliquam. Neque, voluptas veritatis.
+        </p>
+    </div>
+
+
+
+    <script>
+        const openWindow = document.querySelector('.hidden');
+        const btn = document.querySelector('.btn');
+        const closeWindow = document.querySelector('.cross');
+        btn.addEventListener('click', function () {
+            openWindow.classList.remove('show');
+
+            console.log("got clicked");
+        });
+
+        closeWindow.addEventListener('click', function () {
+            openWindow.classList.add('show');
+        });
+    </script>
+</body>
+
+</html>
